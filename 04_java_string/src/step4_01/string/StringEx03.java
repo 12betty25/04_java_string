@@ -43,11 +43,11 @@ public class StringEx03 {
 		System.out.println(str.charAt(1));
 		char ch = str.charAt(2); //(중요) charAt메서드의 결과는 char 자료형이다. string으로는 못 뽑음. 한 '글자'만 뽑아오는 거기 때문
 		System.out.println(ch);
-		System.out.println(str.charAt(str.length()-1));
+		System.out.println(str.charAt(str.length()-1));	// -> t
 		System.out.println();
 		
 		for(int i = 0; i < str.length(); i++) {
-			System.out.println(str.charAt(i));
+			System.out.println(str.charAt(i));			//글자 하나씩 전부 출력
 		}
 		System.out.println("\n===============================\n");
 		
@@ -61,8 +61,8 @@ public class StringEx03 {
 		System.out.println();
 		
 		// 4-2) substring(index1부터 끝까지)
-		System.out.println(str.substring(2));
-		System.out.println(str.substring(4));
+		System.out.println(str.substring(2)); //2~5 -> gait
+		System.out.println(str.substring(4)); //4~5 -> it
 		System.out.println("\n===============================\n");
 		
 		// [5] split("구분자") : 구분자로 잘라내기
@@ -77,15 +77,15 @@ public class StringEx03 {
 		}
 		System.out.println();
 		
-		temp = str2.split(" ");
-		System.out.println(temp.length); //-> {hello},{java} 2개
+		temp = str2.split(" ");			 //temp 재정의
+		System.out.println(temp.length); //-> {hello},{java}, {programming} 3개 
 		for (int i = 0; i < temp.length; i++) {
 			System.out.print(temp[i] + " ");
 		}
 		System.out.println();
 		
 		temp = str3.split("/");
-		System.out.println(temp.length); //-> {hello},{java} 2개
+		System.out.println(temp.length); //-> {hello},{java}, {programming}, {megait} 4개
 		for (int i = 0; i < temp.length; i++) {
 			System.out.print(temp[i] + " ");
 		}
@@ -93,7 +93,7 @@ public class StringEx03 {
 		
 		System.out.println("\n===============================\n");
 		
-		// [참고] 문자열 비교 :: 문자열1.compareTo(문자열2)
+		// [참고] 문자열 비교 :: 문자열1.compareTo(문자열2) - 아스키코드 이용
 		
 		str1 = "ac";
 		str2 = "dc";

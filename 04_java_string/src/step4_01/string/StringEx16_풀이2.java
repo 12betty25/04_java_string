@@ -10,7 +10,7 @@ import java.util.Scanner;
  *    단어가 없으면 false를 출력한다.
  */
 
-public class StringEx16_풀이 {
+public class StringEx16_풀이2 {
 
 	public static void main(String[] args) {
 		
@@ -22,33 +22,21 @@ public class StringEx16_풀이 {
 		System.out.print("검색할 단어를 입력하세요 : ");
 		String word = scan.next();
 		
-		char[] arr = new char[text.length()];
-		
-		for (int i = 0; i < arr.length; i++) {	//이걸 왜 까먹어!!
-			arr[i] = text.charAt(i);
-		}
-		
 		boolean check = false;
 		
-		int textSize = word.length();
-		for (int i = 0; i < arr.length - textSize + 1; i++) {
-			
-			int correctCnt = 0;
-			for (int j = 0; j < textSize; j++) {
-				if(arr[i+j] == word.charAt(j)) {
-					correctCnt++;
+		String[] textArr = text.split(" ");
+		for (int i = 0; i < textArr.length; i++) {
+			if (word.equals(textArr[i])) {
+				check = true;
 				}
 			}
-			
-			if (correctCnt == textSize) {
-				check = true;
-			}
+		
+		if (check == true) {
+			System.out.println("true");
 		}
-		
-		if (check) System.out.println("일치");
-		else	   System.out.println("불일치");
-		
-		scan.close();
+		else {
+			System.out.println("false");
+		}
 	}
 
 }

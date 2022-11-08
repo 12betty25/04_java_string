@@ -23,15 +23,16 @@ public class StringEx16_정답예시 {
 		System.out.print("검색할 단어를 입력하세요 : ");
 		String word = scan.next();
 		
-		char[] arr = new char[text.length()];				//text length만큼 배열 크기 저장
+		char[] arr = new char[text.length()];				//문장을 배열로 만들어주기 text length만큼 배열 크기 저장
 		
 		for (int i = 0; i < text.length(); i++) {			
-			arr[i] = text.charAt(i);						//저장
+			arr[i] = text.charAt(i);						//저장(공백이랑 온점까지)
 		}
 		
 		int textSize = word.length();						//입력받은 단어의 크기 변수 생성
-		boolean isSame = false;								//확인 변수 생성
-		for (int i = 0; i < arr.length - textSize + 1; i++) {
+		boolean isSame = false;								//확인 변수 생성 - 단어 크기 확인용 
+		for (int i = 0; i < arr.length - textSize + 1; i++) {	//i는 최대 13까지 올 수 있음 
+			// 마지막으로 올 수 있는 단어의 시작이 Short의 s (arr[13])이기 때문
 			int correctCnt = 0;						
 			for (int j = 0; j < textSize; j++) {
 				if (arr[i+j] == word.charAt(j)) {
